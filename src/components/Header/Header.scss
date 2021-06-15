@@ -1,0 +1,14 @@
+@use '../../partials/_variables.scss' as *;
+@use '../../partials/_typography.scss' as *;
+@use '../../partials/_mixins' as *;
+
+.menu-button{
+    
+    &__icon{
+        transform: scaleX(-1);    
+    }
+}
+.nav-links{
+    display: flex;
+    flex-direction: row;
+}

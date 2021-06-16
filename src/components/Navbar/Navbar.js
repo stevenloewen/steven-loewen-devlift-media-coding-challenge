@@ -15,8 +15,12 @@ function Header() {
             paddingInline: '1.5rem',
             paddingBlock: '1.5rem',
           },
+          [theme.breakpoints.up("md")]: {
+            paddingInline: '3.6rem',
+            paddingBlock: '1.96rem',
+            },
           [theme.breakpoints.up("lg")]: {
-            paddingInline: '4.5rem',
+            paddingInline: '5.7rem',
             paddingBlock: '3rem',
           },          
         },
@@ -25,12 +29,17 @@ function Header() {
           flexDirection: 'row',
           justifyContent: 'space-between',
           paddingInline: 0,
+          alignItems: 'center'
         },
         fundo: {
             fontWeight: theme.typography.fontWeightBold,
+            
+            [theme.breakpoints.up("lg")]: {
+                fontSize: '2rem'
+            }, 
         },
         navLink: {            
-            borderRadius: '1.25rem',
+            borderRadius: '1.5rem',
             fontWeight: theme.typography.fontWeightBold,
             
             '&:hover': {
@@ -48,7 +57,7 @@ function Header() {
               },
         },
         login: {
-            borderRadius: '1.25rem',
+            borderRadius: '1.5rem',
             fontWeight: theme.typography.fontWeightBold,
             backgroundColor: '#000000',
             [theme.breakpoints.up("md")]: {

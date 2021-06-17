@@ -33,8 +33,7 @@ function Products(props) {
             },
         },
         promotion: {
-            marginBottom: '2rem', 
-                       
+            marginBottom: '2rem',                       
         },
         promotionTitle: {
             fontSize: '1.5rem',
@@ -111,8 +110,7 @@ function Products(props) {
             
             [theme.breakpoints.up("md")]: {
                 maxWidth: 155,
-            },
-            
+            },            
         },
         product: {
             fontSize: '0.7rem',
@@ -132,8 +130,7 @@ function Products(props) {
             [theme.breakpoints.up("lg")]: {
                 fontSize: '1.3rem',                
             },
-        },
-        
+        },        
     }));
 
     const styles = useStyles();

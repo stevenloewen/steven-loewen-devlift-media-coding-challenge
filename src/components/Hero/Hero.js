@@ -35,21 +35,20 @@ function Hero(props) {
                 paddingInline: '1.5rem',
                 paddingBlock: '0.8rem',
                 height: 350,
-              },
-              [theme.breakpoints.up("md")]: {
+            },
+            [theme.breakpoints.up("md")]: {
                 flexDirection: 'row',
                 height: 310,
                 alignItems: 'flex-start',
                 paddingInline: '3.6rem',
                 paddingBlock: '1.96rem',
                 marginBottom: 0,
-              },
-              [theme.breakpoints.up("lg")]: {
+            },
+            [theme.breakpoints.up("lg")]: {
                 paddingInline: '5.7rem',
                 paddingBlock: '3.125rem',
                 height: 450,
-              },
-              
+            },              
         },
         heroTextContainer:{
             display: 'flex',
@@ -59,7 +58,7 @@ function Hero(props) {
             [theme.breakpoints.up("md")]: {
                 alignItems: 'flex-start',
                 width: '40%' 
-              },
+            },
             [theme.breakpoints.up("lg")]: {
                 justifyContent: 'flex-start',
                 width: '60%'          
@@ -71,12 +70,11 @@ function Hero(props) {
             [theme.breakpoints.up("sm")]: {
                 fontSize: "2rem",
                 width: '80%',
-              },
-              [theme.breakpoints.up("lg")]: {
+            },
+            [theme.breakpoints.up("lg")]: {
                 fontSize: "3rem",
-                width: '50%',
-                
-              },
+                width: '50%',                
+            },
         },
         heroText: {
             fontWeight: theme.typography.fontWeightBold,
@@ -182,8 +180,7 @@ function Hero(props) {
             
             [theme.breakpoints.up("md")]: {
                 flexDirection: 'row',
-                width: '90%',
-                
+                width: '90%',                
             }, 
         },
         buyNow: {

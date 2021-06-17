@@ -49,12 +49,12 @@ function Header() {
                 fontSize: '0.7rem',
                 paddingInline: '1.45rem',
                 paddingBlock: '0.4rem',
-              },
-              [theme.breakpoints.up("lg")]: {
+            },
+            [theme.breakpoints.up("lg")]: {
                 fontSize: '0.8rem',
                 paddingInline: '1.65rem',
                 paddingBlock: '0.6rem',
-              },
+            },
         },
         login: {
             borderRadius: '1.5rem',
@@ -70,13 +70,13 @@ function Header() {
                 paddingInline: '1.55rem',
                 paddingBlock: '0.5rem',
                 marginLeft: '1.55rem',
-              },
-              [theme.breakpoints.up("lg")]: {
+            },
+            [theme.breakpoints.up("lg")]: {
                 fontSize: '0.7rem',
                 paddingInline: '1.75rem',
                 paddingBlock: '0.7rem',
                 marginLeft: '1.75rem',
-              },                
+            },                
         }
       }));
     

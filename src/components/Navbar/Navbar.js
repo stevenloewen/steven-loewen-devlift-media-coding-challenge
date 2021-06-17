@@ -1,149 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Typography, AppBar, IconButton, Toolbar, Link, Hidden } from '@material-ui/core';
-// import { makeStyles } from '@material-ui/core/styles';
 import SortIcon from '@material-ui/icons/Sort';
+import CloseIcon from '@material-ui/icons/Close';
 
 import { useStyles } from './styles';
 import { navBarLinks } from './navBarLinks';
 
 function Header() {
-    
-    // const useStyles = makeStyles((theme) => ({
-    //     appBar: {
-    //       backgroundColor: theme.palette.primary.main,
-    //       color: theme.palette.primary.contrastText,          
 
-    //       [theme.breakpoints.up("sm")]: {
-    //         paddingInline: '1.5rem',
-    //         paddingBlock: '1.5rem',
-    //       },
-    //       [theme.breakpoints.up("md")]: {
-    //         paddingInline: '3.6rem',
-    //         paddingBlock: '1.96rem',
-    //         },
-    //       [theme.breakpoints.up("lg")]: {
-    //         paddingInline: '5.7rem',
-    //         paddingBlock: '3rem',
-    //       },          
-    //     },
-    //     toolBar: {
-    //       display: 'flex',
-    //       flexDirection: 'row',
-    //       justifyContent: 'space-between',
-    //       paddingInline: 0,
-    //       alignItems: 'center'
-    //     },
-    //     fundo: {
-    //         fontWeight: theme.typography.fontWeightBold,
-            
-    //         [theme.breakpoints.up("lg")]: {
-    //             fontSize: '2rem'
-    //         }, 
-    //     },
-    //     navLink: {            
-    //         borderRadius: '1.5rem',
-    //         fontWeight: theme.typography.fontWeightBold,
-            
-    //         '&:hover': {
-    //             border: '1px solid white'
-    //         },
-    //         [theme.breakpoints.up("md")]: {
-    //             fontSize: '0.7rem',
-    //             paddingInline: '1.45rem',
-    //             paddingBlock: '0.4rem',
-    //         },
-    //         [theme.breakpoints.up("lg")]: {
-    //             fontSize: '0.8rem',
-    //             paddingInline: '1.65rem',
-    //             paddingBlock: '0.6rem',
-    //         },
-    //     },
-    //     login: {
-    //         borderRadius: '1.5rem',
-    //         fontWeight: theme.typography.fontWeightBold,
-    //         backgroundColor: '#000000',
+    const [clicked, setClicked] = useState(false);
 
-    //         '&:hover': {
-    //             backgroundColor: '#ffffff',
-    //             color: '#000000'
-    //         },
-    //         [theme.breakpoints.up("md")]: {
-    //             fontSize: '0.6rem',
-    //             paddingInline: '1.55rem',
-    //             paddingBlock: '0.5rem',
-    //             marginLeft: '1.55rem',
-    //         },
-    //         [theme.breakpoints.up("lg")]: {
-    //             fontSize: '0.7rem',
-    //             paddingInline: '1.75rem',
-    //             paddingBlock: '0.7rem',
-    //             marginLeft: '1.75rem',
-    //         },                
-    //     },
-    //     menuButtonIcon: {
-    //         transform: 'scaleX(-1)', 
-    //     }
-    //   }));
+    const menuButtonClick = () => {
+        setClicked(!clicked);
+    };
     
     const styles = useStyles();
     const styledNavBarLinks = navBarLinks(styles);
-
-    // const navBarLinks = [
-    //     {
-    //         href: '/',
-    //         color: 'inherit',
-    //         className: styles.navLink,
-    //         component: 'button',
-    //         onClick: (e)=> e.preventDefault(),
-    //         underline: 'none',
-    //         text: 'Home'
-    //     },
-    //     {
-    //         href: '#',
-    //         color: 'inherit',
-    //         className: styles.navLink,
-    //         component: 'button',
-    //         onClick: (e)=> e.preventDefault(),
-    //         underline: 'none',
-    //         text: 'About Us'
-    //     },
-    //     {
-    //         href: '#',
-    //         color: 'inherit',
-    //         className: styles.navLink,
-    //         component: 'button',
-    //         onClick: (e)=> e.preventDefault(),
-    //         underline: 'none',
-    //         text: 'Furniture'
-    //     },
-    //     {
-    //         href: '#',
-    //         color: 'inherit',
-    //         className: styles.navLink,
-    //         component: 'button',
-    //         onClick: (e)=> e.preventDefault(),
-    //         underline: 'none',
-    //         text: 'Blog'
-    //     },
-    //     {
-    //         href: '#',
-    //         color: 'inherit',
-    //         className: styles.navLink,
-    //         component: 'button',
-    //         onClick: (e)=> e.preventDefault(),
-    //         underline: 'none',
-    //         text: 'Contact Us'
-    //     },
-    //     {
-    //         href: '#',
-    //         color: 'inherit',
-    //         className: styles.login,
-    //         component: 'button',
-    //         onClick: (e)=> e.preventDefault(),
-    //         underline: 'none',
-    //         text: 'Login'
-    //     },
-    // ]
 
     return (
         <nav>
@@ -167,9 +39,18 @@ function Header() {
                             </Typography>
                         </Hidden>
                         <Hidden mdUp = 'true'>
-                            <IconButton edge="end" color="inherit" aria-label="menu">
-                                <SortIcon className={styles.menuButtonIcon} />
+                            <IconButton edge="end" color="inherit" aria-label="menu" onClick={menuButtonClick}>
+                                {!clicked ? <SortIcon className={styles.menuButtonIcon} /> : <CloseIcon />}                                
                             </IconButton>
+                            <Typography variant="h6" color="inherit" className={clicked ? [styles.navMenu, styles.navMenuActive] : styles.navMenu}>
+                                {styledNavBarLinks.map((item, index) => {
+                                    return(
+                                        <Link href={item.href} color={item.color} className={item.className} component = {item.component} onClick = {item.onClick} underline={item.underline} key={index}>
+                                            {item.text}
+                                        </Link>
+                                    )
+                                })}
+                            </Typography>
                         </Hidden>
                     </div>
                 </Toolbar>

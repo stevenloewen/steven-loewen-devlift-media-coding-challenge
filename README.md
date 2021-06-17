@@ -1,3 +1,5 @@
+To view this site, go to [https://agitated-euler-225218.netlify.app](https://agitated-euler-225218.netlify.app/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

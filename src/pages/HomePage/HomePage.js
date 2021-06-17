@@ -6,10 +6,10 @@ import Products from '../../components/Products/Products';
 function HomePage(props) {
 
     return (
-        <div>
+        <>
             <Header/>
             <Products/>
-        </div>
+        </>
     );
 }
 

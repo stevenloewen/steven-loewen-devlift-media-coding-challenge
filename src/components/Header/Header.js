@@ -4,10 +4,10 @@ import Hero from '../Hero/Hero';
 
 function Header(props) {
     return (
-        <header>
+        <>
             <Navbar />
             <Hero />       
-        </header>
+        </>
     );
 }
 

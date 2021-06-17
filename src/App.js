@@ -1,4 +1,3 @@
-import './App.scss';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage/HomePage';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';

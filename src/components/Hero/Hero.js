@@ -11,6 +11,16 @@ function Hero(props) {
 
     const useStyles = makeStyles((theme) => ({
         
+        hero: {
+            marginBottom: '2rem',
+
+            [theme.breakpoints.up("md")]: {
+                marginBottom: '7rem',
+            },
+            [theme.breakpoints.up("lg")]: {
+                marginBottom: '11rem',
+            },
+        },
         heroContainer: {
             backgroundColor: theme.palette.primary.main,
             color: theme.palette.primary.contrastText,
@@ -32,6 +42,7 @@ function Hero(props) {
                 alignItems: 'flex-start',
                 paddingInline: '3.6rem',
                 paddingBlock: '1.96rem',
+                marginBottom: 0,
               },
               [theme.breakpoints.up("lg")]: {
                 paddingInline: '5.7rem',
@@ -77,12 +88,14 @@ function Hero(props) {
             [theme.breakpoints.up("md")]: {
                 fontSize: "0.7rem",
                 width: '95%',
+                maxWidth: 330,
                 lineHeight: '1rem',
                 marginBottom: '1rem'
             },
             [theme.breakpoints.up("lg")]: {
                 fontSize: "1rem",
                 width: '60%',
+                maxWidth: 450,
                 lineHeight: '1.5rem',
             },
         },
@@ -232,12 +245,10 @@ function Hero(props) {
       }));
     
     const styles = useStyles();
-
-   
     
 
     return (
-        <section>
+        <section className={styles.hero}>
             <Container className={styles.heroContainer} component='div' maxWidth='false'>
                 <Box className={styles.heroTextContainer} component='div' textAlign={{ xs: 'center', sm: 'center', md: 'left' }} >
                     <Typography variant="h1" component="h1" className={styles.heroMainText} color="inherit">

@@ -6,8 +6,7 @@ function Header(props) {
     return (
         <header>
             <Navbar />
-            <Hero />
-            
+            <Hero />       
         </header>
     );
 }

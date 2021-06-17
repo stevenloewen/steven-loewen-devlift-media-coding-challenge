@@ -60,6 +60,11 @@ function Header() {
             borderRadius: '1.5rem',
             fontWeight: theme.typography.fontWeightBold,
             backgroundColor: '#000000',
+
+            '&:hover': {
+                backgroundColor: '#ffffff',
+                color: '#000000'
+            },
             [theme.breakpoints.up("md")]: {
                 fontSize: '0.6rem',
                 paddingInline: '1.55rem',
